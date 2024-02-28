@@ -1,10 +1,12 @@
 "use client";
 import "./globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
-import { cn } from "@/lib/cn";
-
+import Header from "@/components/header";
+import Layout from "@/components/layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -14,16 +16,10 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <main
-            className={cn(
-              "min-h-screen flex flex-col p-10 items-center bg-[url('/bg-1.png')] dark:bg-[url('/bg-1-invert.png')]"
-            )}
-          >
-            <div className="flex justify-end w-full">
-              <ThemeSwitcher />
-            </div>
-            {children}
-          </main>
+          <Layout>
+            <Header />
+            <div className="p-10">{children}</div>
+          </Layout>
         </Providers>
       </body>
     </html>

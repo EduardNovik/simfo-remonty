@@ -5,7 +5,7 @@ import { Switch } from "@nextui-org/react";
 import React from "react";
 import { Sun, Moon } from "lucide-react";
 
-export function ThemeSwitcher() {
+const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -29,4 +29,6 @@ export function ThemeSwitcher() {
       />
     </div>
   );
-}
+};
+
+export default ThemeSwitcher;
