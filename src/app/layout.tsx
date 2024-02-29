@@ -18,7 +18,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <Layout>
             <Header />
-            <div className="p-10">{children}</div>
+            {children}
           </Layout>
         </Providers>
       </body>

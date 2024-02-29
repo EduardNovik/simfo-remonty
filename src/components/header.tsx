@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -13,15 +13,13 @@ import { Sun } from "lucide-react";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-
-interface MenuItemType {
-  name: string;
-  url: string;
-}
+import type { MenuItemType } from "@/models/index";
 
 const menuItems: MenuItemType[] = [
   { name: "Home", url: "/" },
   { name: "Contacts", url: "/contacts" },
+  { name: "Design", url: "/design" },
+  { name: "Pricing", url: "/pricing" },
   { name: "About", url: "/about" },
 ];
 
@@ -30,7 +28,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
       <NavbarContent justify="end">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
