@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.slick-next {
+  right: 80px !important;
+}
+
+.slick-next::before {
+  display: none;
+}
+
+.slick-prev {
+  left: 0px !important;
+}
+
+.slick-prev::before {
+  display: none;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1 !important;
+  width: 0px !important;
+  height: 0px !important;
+}
