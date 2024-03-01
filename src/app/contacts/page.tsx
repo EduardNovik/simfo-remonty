@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
+import Layout from "@/components/layout";
 
 const Contacts = () => {
-  return <div>Contacts</div>;
+  return <Layout>Contacts</Layout>;
 };
 
 export default Contacts;

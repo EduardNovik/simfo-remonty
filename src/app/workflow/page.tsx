@@ -1,9 +1,10 @@
 "use client";
+
 import React from "react";
 import Layout from "@/components/layout";
 
-const About = () => {
-  return <Layout>About</Layout>;
+const Workflow = () => {
+  return <Layout>Workflow</Layout>;
 };
 
-export default About;
+export default Workflow;
