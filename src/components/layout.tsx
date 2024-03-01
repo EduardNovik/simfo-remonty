@@ -1,15 +1,18 @@
+"use client";
 import React from "react";
 import { cn } from "@/lib/cn";
 
-const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const Layout = ({
+  children,
+  customStyles,
+}: {
+  children: React.ReactNode;
+  customStyles?: string;
+}) => {
   return (
-    <main
-      className={cn(
-        "min-h-screen flex flex-col items-center bg-[url('/bg-1.png')] dark:bg-[url('/bg-1-invert.png')]"
-      )}
-    >
+    <div className={cn(`container mx-auto p-4 ${customStyles}`)}>
       {children}
-    </main>
+    </div>
   );
 };
 

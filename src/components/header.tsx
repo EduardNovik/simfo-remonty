@@ -17,9 +17,11 @@ import type { MenuItemType } from "@/models/index";
 
 const menuItems: MenuItemType[] = [
   { name: "Home", url: "/" },
-  { name: "Contacts", url: "/contacts" },
   { name: "Design", url: "/design" },
   { name: "Pricing", url: "/pricing" },
+  { name: "Details", url: "/details" },
+  { name: "Workflow", url: "/workflow" },
+  { name: "Contacts", url: "/contacts" },
   { name: "About", url: "/about" },
 ];
 

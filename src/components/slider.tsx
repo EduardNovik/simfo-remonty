@@ -62,7 +62,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div className={className} style={{ ...style }} onClick={onClick}>
-      <ChevronRight className="size-20 text-white opacity-50 hover:opacity-100 transition-all delay-200 hover:scale-105" />
+      <ChevronRight className="size-36 text-white opacity-50 hover:opacity-100 transition-all delay-200 hover:scale-105" />
     </div>
   );
 }
@@ -71,19 +71,19 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div className={className} style={{ ...style }} onClick={onClick}>
-      <ChevronRight className="size-20 text-white rotate-180 opacity-50 hover:opacity-100 transition-all delay-100 hover:scale-105" />
+      <ChevronRight className="size-36 text-white rotate-180 opacity-50 hover:opacity-100 transition-all delay-100 hover:scale-105" />
     </div>
   );
 }
 
 const SimpleSlider = () => {
-  const [animate, setAnimate] = useState(false);
+  const [animate, setAnimate] = useState(true);
   const settings: Settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow className="before:hidden" />,
+    prevArrow: <SamplePrevArrow />,
     beforeChange: () => setAnimate(false),
     afterChange: () => setAnimate(true),
   };

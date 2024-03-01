@@ -11,11 +11,10 @@ import type { SliderContentType } from "@/models/index";
 
 const Card = ({ item }: { item: SliderContentType }) => {
   return (
-    <div className="max-w-1/5 px-8">
+    <div className="max-w-xl">
       <CardUI
         isFooterBlurred
-        className="w-full h-[300px] col-span-12 sm:col-span-7"
-        isPressable
+        className="w-full h-[300px] col-span-12 sm:col-span-7 rounded-none cursor-pointer"
         onPress={() => console.log("item pressed")}
         shadow="sm"
       >
@@ -30,17 +29,12 @@ const Card = ({ item }: { item: SliderContentType }) => {
           </CardHeader>
           <Image
             removeWrapper
-            alt="Relaxing app background"
-            className="z-0 w-full h-full object-cover"
+            alt="design example"
+            className="z-0 w-full h-full object-cover rounded-none hover:scale-110  card-custom"
             src={item.url}
           />
-          <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100 rounded-none">
             <div className="flex flex-grow gap-2 items-center">
-              <Image
-                alt="Breathing app icon"
-                className="rounded-full w-10 h-11 bg-black"
-                src="/images/breathing-app-icon.jpeg"
-              />
               <div className="flex flex-col">
                 <p className="text-tiny text-white/60">Breathing App</p>
                 <p className="text-tiny text-white/60">
