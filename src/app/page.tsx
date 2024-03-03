@@ -6,30 +6,6 @@ import Card from "@/components/card";
 import type { SliderContentType } from "@/models/index";
 import Layout from "@/components/layout";
 
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 1,
-    },
-  },
-};
-
-const containerVariants = {
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const sliderContent: SliderContentType[] = [
   {
     url: "/slider-img/flat1.jpeg",
@@ -117,19 +93,23 @@ const Home = () => {
           elit. Quibusdam ab reiciendis magnam consequatur dolorum maiores
           voluptates quam quod incidunt cumque saepe, perferendis tempora
         </motion.p>
-        <motion.div
-          className="gap-4 grid grid-cols-3 items-center"
-          variants={containerVariants}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-        >
+        <div className="gap-4 grid grid-cols-3 items-center">
           {sliderContent.map((item, index) => (
-            <motion.div key={index} variants={cardVariants}>
+            <motion.div
+              key={index}
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                bounce: 0.1,
+                duration: 1,
+                delay: index * 0.15,
+              }}
+            >
               <Card item={item} />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </Layout>
     </>
   );

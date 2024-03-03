@@ -11,7 +11,7 @@ import type { SliderContentType } from "@/models/index";
 
 const Card = ({ item }: { item: SliderContentType }) => {
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl card-hover">
       <CardUI
         isFooterBlurred
         className="w-full h-[300px] col-span-12 sm:col-span-7 rounded-none cursor-pointer"
